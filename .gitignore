@@ -7,3 +7,6 @@ env/
 
 # Ignore .env file
 .env
+
+# mac
+.DS_Store

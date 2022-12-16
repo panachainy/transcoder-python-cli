@@ -8,6 +8,14 @@
 python3 -m venv env
 ```
 
+### prerequisite
+
+```sh
+brew install ffmpeg
+# check
+ffmpeg -version
+```
+
 ### activate env (do every time before dev)
 
 ```sh
