@@ -2,6 +2,10 @@ import argparse
 import ffmpeg
 import os
 import requests
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
 
 # Create an ArgumentParser object
 parser = argparse.ArgumentParser()
