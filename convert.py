@@ -42,18 +42,25 @@ if args.upload:
 
     # Create a Mux asset
     response = requests.post(
-        f'{api_endpoint}/videos',
+        f'{api_endpoint}/video/v1/uploads',
         auth=(api_key, api_secret),
-        json={'new_asset_settings': {'playback_policy': 'public'}}
+        json={"new_asset_settings":{"playback_policy":["public"]},"cors_origin":"*"}
     )
     response.raise_for_status()
-    asset_id = response.json()['data']['id']
+    # asset_id = response.json()['data']['id']
 
-    # Upload the output file to the Mux asset
+    # print('asset_id',asset_id)
+    asset_url = response.json()['data']['url']
+
+    # Open the MP4 file
     with open(output_file, 'rb') as file:
-        requests.put(
-            f'{api_endpoint}/assets/{asset_id}/source',
-            auth=(api_key, api_secret),
-            headers={'Content-Type': 'video/mp4'},
+        # Send an HTTP PUT request to the Google Cloud Storage API endpoint
+        gcpRes = requests.put(
+            asset_url,
+            # params=params,
             data=file
-        ).raise_for_status()
+        )
+
+    # Print the response from the Google Cloud Storage API
+    print('GCP storage status',gcpRes)
+    print('Try to check on mux asset waiting Upload from GCP to Mux automatic.')
