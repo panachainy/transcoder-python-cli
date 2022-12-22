@@ -47,9 +47,6 @@ if args.upload:
         json={"new_asset_settings":{"playback_policy":["public"]},"cors_origin":"*"}
     )
     response.raise_for_status()
-    # asset_id = response.json()['data']['id']
-
-    # print('asset_id',asset_id)
     asset_url = response.json()['data']['url']
 
     # Open the MP4 file
@@ -63,4 +60,4 @@ if args.upload:
 
     # Print the response from the Google Cloud Storage API
     print('GCP storage status',gcpRes)
-    print('Try to check on mux asset waiting Upload from GCP to Mux automatic.')
+    print('Try to check on mux asset waiting Upload from GCP to Mux automatic https://dashboard.mux.com')
