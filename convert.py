@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser()
 
 # Add arguments for the input URL, output file name, and upload flag
 parser.add_argument('input_url', help='URL of the input M3U8 file')
-parser.add_argument('output_file', default='default_output.mp4', help='Name of the output MP4 file %(prog)s (default: %(default)s)')
+parser.add_argument('--output_file', default='default_output.mp4', help='Name of the output MP4 file %(prog)s (default: %(default)s)')
 parser.add_argument('--upload', action='store_true', help='Upload the output MP4 file to a Mux asset')
 
 # Parse the command line arguments
