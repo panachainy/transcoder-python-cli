@@ -4,3 +4,4 @@ future==0.18.2
 macholib==1.16.2
 modulegraph==0.19.3
 py2app==0.28.4
+python-dotenv==0.21.0
