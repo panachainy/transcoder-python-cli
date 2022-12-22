@@ -27,6 +27,7 @@ output_file = args.output_file
     ffmpeg
     .input(input_url)
     .output(output_file, c='copy')
+    .overwrite_output()
     .run()
 )
 
