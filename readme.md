@@ -35,3 +35,15 @@ python convert.py https://storage.googleapis.com/bucket-name/xxxxxxxxx.m3u8 --ou
 # help
 python convert.py -h
 ```
+
+## Docker
+
+> Note not work for now
+
+```sh
+docker build -t myimage .
+```
+
+```sh
+docker run myimage https://storage.googleapis.com/xxxxxxxxxxxx.m3u8 --upload
+```
